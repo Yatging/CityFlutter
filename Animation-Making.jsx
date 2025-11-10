@@ -37,13 +37,11 @@ function main() {
 
     // 步骤2：设置遮罩样式（遮挡非当前帧的区域）
     var maskColor = prompt("遮罩颜色（r,g,b，如0,0,0为黑色）：", "0,0,0");
-    // 替换map方法为循环处理
     var rgbStrs = maskColor.split(",");
     var rgb = [];
     for (var i = 0; i < rgbStrs.length; i++) {
         rgb.push(Number(rgbStrs[i]));
     }
-    // 验证RGB格式
     var rgbValid = true;
     for (var i = 0; i < rgb.length; i++) {
         var c = rgb[i];
@@ -94,7 +92,7 @@ function main() {
         frameLayer.name = "帧" + (i + 1); // 图层命名：帧1、帧2...
 
         // 3. 在图层上绘制"反向遮罩"：遮挡除当前Grid外的所有区域
-        // 先选中整个画布（作为遮罩基础）
+        // 先选中整个画布（替换原有选区）
         maskDoc.selection.select([
             [0, 0],
             [totalWidth, 0],
@@ -102,7 +100,7 @@ function main() {
             [0, gridHeight]
         ], SelectionType.REPLACE);
 
-        // 减去当前Grid的区域（让当前Grid区域透明，其余被遮罩）
+        // 减去当前Grid的区域（从现有选区中移除）
         maskDoc.selection.select([
             [gridX, 0],
             [gridX + gridWidth, 0],
