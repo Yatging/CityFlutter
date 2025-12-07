@@ -278,55 +278,153 @@
 <section class="gallery">
   <div class="section-inner">
     <h3 class="section-title">图文展示</h3>
-    <p class="section-sub">统一本地路径占位</p>
-    <div class="gallery-grid">
+    <p class="section-sub">作品图文左右交替展示方式</p>
 
-      <figure class="gallery-item">
-        <img src="assets/images/work1.jpg" alt="作品 1">
-        <figcaption><strong>作品 1</strong> — 说明占位</figcaption>
-      </figure>
+    <style>
+      .alt-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding: 40px 0;
+        align-items: center;
+      }
+      .alt-layout img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        background: #ccc;
+      }
+      .alt-layout .text {
+        font-size: 1rem;
+        color: #444;
+      }
+      .alt-layout .text strong {
+        font-size: 1.2rem;
+        display: block;
+        margin-bottom: 6px;
+        color: var(--text);
+      }
+    </style>
 
-      <figure class="gallery-item">
-        <img src="assets/images/work2.jpg" alt="作品 2">
-        <figcaption><strong>作品 2</strong> — 材质占位</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="assets/images/work3.jpg" alt="作品 3">
-        <figcaption><strong>作品 3</strong> — 尺寸占位</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="assets/images/work4.jpg" alt="作品 4">
-        <figcaption><strong>作品 4</strong> — 补充说明</figcaption>
-      </figure>
-
+    <!-- Row 1: 图片左 / 文案右 -->
+    <div class="alt-layout">
+      <img src="assets/images/work1.jpg" alt="作品 1">
+      <div class="text">
+        <strong>作品 1</strong>
+        简短说明或创作年份，材料，展出背景等。
+      </div>
     </div>
+
+    <!-- Row 2: 文案左 / 图片右 -->
+    <div class="alt-layout">
+      <div class="text">
+        <strong>作品 2</strong>
+        作品细节描述或创作动机。
+      </div>
+      <img src="assets/images/work2.jpg" alt="作品 2">
+    </div>
+
+    <!-- Row 3 -->
+    <div class="alt-layout">
+      <img src="assets/images/work3.jpg" alt="作品 3">
+      <div class="text">
+        <strong>作品 3</strong>
+        描述作品尺寸、呈现方式或展示语境。
+      </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="alt-layout">
+      <div class="text">
+        <strong>作品 4</strong>
+        作品延伸说明或额外注记。
+      </div>
+      <img src="assets/images/work4.jpg" alt="作品 4">
+    </div>
+
   </div>
 </section>
+
 
 <section class="more-text">
   <div class="section-inner">
     <div class="text-block">
       <h4 class="text-title">延伸文字说明</h4>
-      <p>这里放更详细的项目文本、创作理念、技术说明或展览背景。</p>
+      <p>By capturing the city’s horizontal and vertical structures and recomposing them into layered visual collages, the project carries the distinctive color palette, texture, and tempo of each district. These structured yet fluid patterns evoke the city’s architectural rhythm and the aesthetic clarity of its lines.
+
+The final output reimagines barrier grid animation not merely as a visual illusion, but as a poetic lens through which Hong Kong’s layered identity is revealed — from its flickering core to its breathing periphery.</p>
     </div>
   </div>
 </section>
 
 <section class="credits">
   <div class="section-inner">
-    <h3 class="section-title">致谢与联系</h3>
-    <p class="section-sub small">策展 / 制作团队等</p>
-    <p class="contact">联系： <a href="mailto:artist@example.com">artist@example.com</a></p>
+    <h3 class="section-title">作者介绍</h3>
+    <p class="section-sub small">两位作者 — 头像 + 简短介绍 + 跳转按钮</p>
+
+    <style>
+      .authors {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        margin-top: 24px;
+      }
+      .author-card {
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: var(--shadow-soft);
+        padding: 22px;
+        text-align: center;
+      }
+      .author-card img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: #ddd;
+        margin-bottom: 16px;
+      }
+      .author-card p {
+        margin: 4px 0 14px;
+      }
+      .author-card a.button {
+        display: inline-block;
+        padding: 10px 18px;
+        background: var(--accent);
+        color: #fff;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+    </style>
+
+    <div class="authors">
+      <!-- Author 1 -->
+      <div class="author-card">
+        <img src="assets/images/author1.jpg" alt="作者 1头像">
+        <h4>HUANG Yifei Peter/h4>
+        <p>创作者介绍段落，可涉及关注方向、创作领域。</p>
+        <a class="button" href="#" target="_blank">访问个人网页</a>
+      </div>
+
+      <!-- Author 2 -->
+      <div class="author-card">
+        <img src="assets/images/author2.jpg" alt="作者 2头像">
+        <h4>SUN Jiayi Anny</h4>
+        <p>创作者介绍段落，可涉及艺术理念或研究方向。</p>
+        <a class="button" href="#" target="_blank">访问个人网页</a>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <p>&copy; 2025 Project Name. All rights reserved.</p>
+    <p>&copy; 2025 City Flutter. All rights reserved.</p>
   </div>
 </footer>
 
