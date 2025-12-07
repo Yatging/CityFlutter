@@ -1,7 +1,6 @@
 // ===========================================
 // Full Scanimation Auto Generator for Photoshop
 // FIXED VERSION (no global return)
-// Author: ChatGPT
 // ===========================================
 
 #target photoshop
