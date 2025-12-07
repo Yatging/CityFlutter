@@ -240,7 +240,7 @@
         </div>
         <div class="video-frame">
           <iframe
-            src="https://www.youtube.com/embed/A6oOGAklxAo"
+            src="https://www.youtube.com/embed/_tIOIFBpNwA"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -259,7 +259,7 @@
         </div>
         <div class="video-frame">
           <iframe
-            src="https://www.youtube.com/embed/_tIOIFBpNwA"
+            src="https://www.youtube.com/embed/A6oOGAklxAo"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -277,7 +277,7 @@
 
 <section class="gallery">
   <div class="section-inner">
-    <h3 class="section-title">图文展示</h3>
+    <h3 class="section-title">Process of Making</h3>
     <p class="section-sub">作品图文左右交替展示方式</p>
 
     <style>
@@ -310,34 +310,42 @@
     <div class="alt-layout">
       <img src="assets/images/work1.jpg" alt="作品 1">
       <div class="text">
-        <strong>作品 1</strong>
-        简短说明或创作年份，材料，展出背景等。
+        <strong>Collecting Materials</strong>
+        We conducted on-site filming across Hong Kong and searched for usable footage.
       </div>
     </div>
 
     <!-- Row 2: 文案左 / 图片右 -->
     <div class="alt-layout">
       <div class="text">
-        <strong>作品 2</strong>
-        作品细节描述或创作动机。
+        <strong>Coding to Edit Materials</strong>
+        We wrote code to edit and compile the collected footage into a cohesive visual narrative.
       </div>
-      <img src="assets/images/work2.jpg" alt="作品 2">
+      <pre id="code-block"></pre>
+
+<script>
+  fetch("ScanimationGenerator.jsx")
+    .then(response => response.text())
+    .then(text => {
+      document.getElementById("code-block").textContent = text;
+    });
+</script>
     </div>
 
     <!-- Row 3 -->
     <div class="alt-layout">
       <img src="assets/images/work3.jpg" alt="作品 3">
       <div class="text">
-        <strong>作品 3</strong>
-        描述作品尺寸、呈现方式或展示语境。
+        <strong>Testing and Refinement</strong>
+        Testing different configurations and refining the visual effects to achieve the desired outcome.
       </div>
     </div>
 
     <!-- Row 4 -->
     <div class="alt-layout">
       <div class="text">
-        <strong>作品 4</strong>
-        作品延伸说明或额外注记。
+        <strong>Video and Music Editing</strong>
+        Finalizing the video with editing software CapCut and adding a fitting soundtrack to enhance the experience.
       </div>
       <img src="assets/images/work4.jpg" alt="作品 4">
     </div>
@@ -349,7 +357,7 @@
 <section class="more-text">
   <div class="section-inner">
     <div class="text-block">
-      <h4 class="text-title">延伸文字说明</h4>
+      <h4 class="text-title">Final Report</h4>
       <p>By capturing the city’s horizontal and vertical structures and recomposing them into layered visual collages, the project carries the distinctive color palette, texture, and tempo of each district. These structured yet fluid patterns evoke the city’s architectural rhythm and the aesthetic clarity of its lines.
 
 The final output reimagines barrier grid animation not merely as a visual illusion, but as a poetic lens through which Hong Kong’s layered identity is revealed — from its flickering core to its breathing periphery.</p>
@@ -359,8 +367,8 @@ The final output reimagines barrier grid animation not merely as a visual illusi
 
 <section class="credits">
   <div class="section-inner">
-    <h3 class="section-title">作者介绍</h3>
-    <p class="section-sub small">两位作者 — 头像 + 简短介绍 + 跳转按钮</p>
+    <h3 class="section-title">Authors</h3>
+    <p class="section-sub small"> </p>
 
     <style>
       .authors {
@@ -403,16 +411,16 @@ The final output reimagines barrier grid animation not merely as a visual illusi
       <div class="author-card">
         <img src="assets/images/author1.jpg" alt="作者 1头像">
         <h4>HUANG Yifei Peter</h4>
-        <p>创作者介绍段落，可涉及关注方向、创作领域。</p>
-        <a class="button" href="#" target="_blank">访问个人网页</a>
+        <p>Year 3 Student of School of Creative Media, City University of Hong Kong.</p>
+        <a class="button" href="https://yatging.github.io/Yifei-Personal-Website/" target="_blank">View Personal Website</a>
       </div>
 
       <!-- Author 2 -->
       <div class="author-card">
         <img src="assets/images/author2.jpg" alt="作者 2头像">
         <h4>SUN Jiayi Anny</h4>
-        <p>创作者介绍段落，可涉及艺术理念或研究方向。</p>
-        <a class="button" href="#" target="_blank">访问个人网页</a>
+        <p>Year 4 Student of School of Creative Media, City University of Hong Kong.</p>
+        <a class="button" href="https://example.com" target="_blank">View Personal Website</a>
       </div>
     </div>
 

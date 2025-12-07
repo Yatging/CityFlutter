@@ -183,6 +183,18 @@ body{
   color:var(--muted);
   font-size:0.95rem;
 }
+.gallery-item pre {
+  width: 100%;
+  height: 220px;          /* 保持和图片一样的高度 */
+  margin: 0;
+  padding: 12px;
+  background-color: #1e1e1e; /* 深色背景更适合代码 */
+  color: #f8f8f2;            /* 浅色字体 */
+  font-family: Consolas, monospace;
+  font-size: 0.9rem;
+  overflow: auto;            /* 超出部分可以滚动 */
+  box-sizing: border-box;
+}
 
 /* 文字块 */
 .text-block{
