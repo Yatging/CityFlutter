@@ -1,443 +1,155 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>City Flutter- SM3805</title>
-  <style>
-    /* styles.css
-       参考苹果官网风格：大留白、精细排版、柔和动效
-    */
-
-    /* 变量 */
-    :root{
-      --bg: #f6f7f8;
-      --surface: #ffffff;
-      --muted: #6b6f76;
-      --text: #0b1220;
-      --accent: #0071e3;
-      --glass: rgba(255,255,255,0.6);
-      --radius-lg: 14px;
-      --radius-md: 10px;
-      --container: 1100px;
-      --gap: 28px;
-      --shadow-soft: 0 8px 30px rgba(11,18,32,0.06);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      color-scheme: light;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      font-size:16px;
-      line-height:1.6;
-    }
-
-    .site{display:flex;flex-direction:column;min-height:100vh}
-
-    .site-header{
-      background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
-      border-bottom:1px solid rgba(11,18,32,0.04);
-      position:sticky;
-      top:0;
-      z-index:30;
-      backdrop-filter: blur(6px);
-    }
-    .header-inner{
-      max-width:var(--container);
-      margin:0 auto;
-      padding:22px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-
-    .brand-title{margin:0;font-size:1.15rem;font-weight:600;letter-spacing:0.2px}
-    .brand-sub{margin:6px 0 0;color:var(--muted);font-size:0.92rem}
-    .header-meta{color:var(--muted);text-align:right;font-size:0.92rem}
-    .header-meta strong{color:var(--text)}
-
-    .main{flex:1;padding:48px 0}
-
-    .section-inner{
-      max-width:var(--container);
-      margin:0 auto;
-      padding:0 20px 48px;
-    }
-
-    .hero-inner{
-      display:grid;
-      grid-template-columns:1fr 480px;
-      gap:40px;
-      align-items:center;
-      padding:36px 20px 56px;
-      max-width: var(--container);
-      margin: 0 auto;
-    }
-    .hero-title{
-      margin:0 0 12px;
-      font-size:2.1rem;
-      font-weight:600;
-      letter-spacing:-0.6px;
-    }
-    .hero-lead{
-      margin:0 0 12px;
-      color:var(--muted);
-      font-size:1.05rem;
-      max-width:60ch;
-    }
-    .hero-meta{color:var(--muted);font-size:0.95rem}
-    .hero-media img{
-      width:100%;
-      height:auto;
-      border-radius:18px;
-      box-shadow:var(--shadow-soft);
-      display:block;
-      object-fit:cover;
-      background:#ddd;
-    }
-
-    .section-title{margin:0 0 6px;font-size:1.05rem;font-weight:600;letter-spacing:0.1px}
-    .section-sub{margin:6px 0 20px;color:var(--muted);font-size:0.95rem}
-
-    .videos-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:22px;
-    }
-    .video-card{
-      background:var(--surface);
-      border-radius:var(--radius-lg);
-      padding:18px;
-      box-shadow:var(--shadow-soft);
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .video-frame{
-      border-radius:10px;
-      overflow:hidden;
-      background:#000;
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-    }
-    .video-frame iframe{
-      position:absolute;
-      top:0;left:0;
-      width:100%;height:100%;
-      display:block;
-    }
-
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:18px;
-      margin-top:12px;
-    }
-    .gallery-item{
-      border-radius:12px;
-      overflow:hidden;
-      background:#ddd;
-      box-shadow:0 12px 36px rgba(11,18,32,0.04);
-    }
-    .gallery-item img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      background:#ccc;
-    }
-    .gallery-item figcaption{
-      padding:14px;
-      color:var(--muted);
-      font-size:0.95rem;
-    }
-    .gallery-item figcaption strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-      font-weight: 500;
-    }
-
-    .text-block{
-      margin-top:20px;
-      padding:20px;
-      border-radius:10px;
-      background:#fff;
-      border:1px solid rgba(11,18,32,0.03);
-    }
-
-    .site-footer{
-      border-top:1px solid rgba(11,18,32,0.04);
-      padding:22px 0;
-    }
-    .footer-inner{text-align:center;color:var(--muted);font-size:0.95rem}
-  </style>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Flutter- SM3805</title>
+    <!-- 链接到您的 CSS 文件 -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="site">
-<header class="site-header">
-  <div class="header-inner">
-    <div class="brand">
-      <h1 class="brand-title">City Flutter</h1>
-      <p class="brand-sub">SM3805 Final Project, School of Creative Media, CityUHK</p>
+    <div class="site">
+        <!-- 头部 -->
+        <header class="site-header">
+            <div class="header-inner">
+                <div>
+                    <h1 class="brand-title">City Flutter</h1>
+                    <p class="brand-sub">SM3805 Final Project, School of Creative Media, CityUHK</p>
+                </div>
+                <div class="header-meta">
+                    <strong>Artist:</strong> Anny SUN Jiayi & Peter HUANG Yifei<br>
+                    <strong>Year:</strong> 2025
+                </div>
+            </div>
+        </header>
+
+        <!-- 主要内容 -->
+        <main class="main">
+            <!-- Hero Section -->
+            <section class="hero-inner">
+                <div class="hero-content">
+                    <h2 class="hero-title">City Flutter – The Rhythm of Hong Kong</h2>
+                    <p class="hero-lead">Developed in Photoshop and CapCut, reinterpreting Hong Kong’s urban fabric through a transformed barrier grid animation technique.</p>
+                </div>
+                <!-- 这里的 hero-media 可以放一张代表性的图片，根据您的 CSS 设计 -->
+                <div class="hero-media">
+                    <!-- 您可以在这里放置一张项目主视觉图 -->
+                    <!-- <img src="path/to/your/image.jpg" alt="City Flutter Main Visual"> -->
+                </div>
+            </section>
+
+            <!-- 视频区 -->
+            <section class="section-inner">
+                <h3 class="section-title">Generative Video Artwork</h3>
+                <p class="section-sub">Video Performance / YouTube External Links</p>
+                <div class="videos-grid">
+                    <div class="video-card">
+                        <div class="video-top">
+                            <h4 class="video-title">City Flutter - The Rhythm of Hong Kong</h4>
+                            <span class="video-duration">2:31</span>
+                        </div>
+                        <div class="video-frame">
+                            <!-- 您可以在这里嵌入 YouTube 视频 -->
+                            <!-- <iframe src="https://www.youtube.com/embed/your_video_id_1" frameborder="0" allowfullscreen></iframe> -->
+                        </div>
+                        <p class="video-desc">The final outcome.</p>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-top">
+                            <h4 class="video-title">Making the City Flutter - Behind the Scenes</h4>
+                            <span class="video-duration">0:32</span>
+                        </div>
+                        <div class="video-frame">
+                            <!-- 您可以在这里嵌入 YouTube 视频 -->
+                            <!-- <iframe src="https://www.youtube.com/embed/your_video_id_2" frameborder="0" allowfullscreen></iframe> -->
+                        </div>
+                        <p class="video-desc">Short video documentation of making process.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 制作过程 -->
+            <section class="section-inner">
+                <h3 class="section-title">Process of Making</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="text-block">
+                           <h4 class="text-title">Collecting Materials</h4>
+                           <p>We conducted on-site filming across Hong Kong and searched for usable footage.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                       <div class="text-block">
+                           <h4 class="text-title">Coding to Edit Materials</h4>
+                           <p>We wrote code to edit and compile the collected footage into a cohesive visual narrative.</p>
+                       </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="text-block">
+                           <h4 class="text-title">Testing and Refinement</h4>
+                           <p>Testing different configurations and refining the visual effects to achieve the desired outcome.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="text-block">
+                           <h4 class="text-title">Video and Music Editing</h4>
+                           <p>Finalizing the video with editing software CapCut and adding a fitting soundtrack to enhance the experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+                        <!-- ================================================== -->
+            <!-- == 新增的在线文档 Section == -->
+            <!-- ================================================== -->
+            <section class="section-inner">
+                <h3 class="section-title">Final Report</h3>
+                <p class="section-sub">Online Google Document</p>
+                
+                <!-- Google Doc 嵌入容器 -->
+                <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-soft); border: 1px solid rgba(11,18,32,0.04);">
+                    <iframe 
+                        src="https://docs.google.com/document/d/1o-berZDZ2TySHC1_gMcTohAgxspTZvjYxxr6LR5laAI/edit?usp=sharing" 
+                        frameborder="0" 
+                        width="100%" 
+                        height="700" 
+                        allowfullscreen="true" 
+                        mozallowfullscreen="true" 
+                        webkitallowfullscreen="true"
+                        style="display: block;">
+                    </iframe>
+                </div>
+            </section>
+            
+
+            <!-- 作者信息 (倒数第二个 section) -->
+            <section class="section-inner credits">
+                <h3 class="section-title">Authors</h3>
+                <div class="videos-grid"> <!-- 复用 videos-grid 布局来实现两列对齐 -->
+                    <div class="video-card">
+                        <h4 class="video-title">HUANG Yifei Peter</h4>
+                        <p class="small">Year 3 Student of School of Creative Media, City University of Hong Kong.</p>
+                        <p class="contact"><a href="#" target="_blank" rel="noopener noreferrer">View Personal Website</a></p>
+                    </div>
+                    <div class="video-card">
+                        <h4 class="video-title">SUN Jiayi Anny</h4>
+                        <p class="small">Year 4 Student of School of Creative Media, City University of Hong Kong.</p>
+                        <p class="contact"><a href="#" target="_blank" rel="noopener noreferrer">View Personal Website</a></p>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <p>© 2025 City Flutter. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
-    <div class="header-meta">
-      <p>Artist: <strong>Anny SUN Jiayi & Peter HUANG Yifei</strong></p>
-      <p>Year: <strong>2025</strong></p>
-    </div>
-  </div>
-</header>
-
-<main class="main">
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <h2 class="hero-title">City Flutter – The Rhythm of Hong Kong</h2>
-      <p class="hero-lead">Developed in Photoshop and CapCut, reinterpreting Hong Kong’s urban fabric through a transformed barrier grid animation technique.
-</p>
-      <p class="hero-meta">Generative Video Artwork</p>
-    </div>
-    <div class="hero-media">
-      <img src="assets/images/hero.jpg" alt="项目主视觉">
-    </div>
-  </div>
-</section>
-
-<section class="videos">
-  <div class="section-inner">
-    <h3 class="section-title">Video Performance</h3>
-    <p class="section-sub">YouTube External Links</p>
-
-    <style>
-      /* 让视频纵向排列并占满宽度 */
-      .videos-grid {
-        display: grid;
-        grid-template-columns: 1fr; /* 单列 */
-        gap: 28px;
-      }
-      /* 让 video-card 宽度自动拉满 */
-      .video-card {
-        width: 100%;
-      }
-    </style>
-
-    <div class="videos-grid">
-
-      <!-- 视频 1 -->
-      <div class="video-card">
-        <div class="video-top">
-          <h4 class="video-title">City Flutter - The Rhythm of Hong Kong</h4>
-          <span class="video-duration">2:31</span>
-        </div>
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/_tIOIFBpNwA"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-        </div>
-        <p class="video-caption">The final outcome.</p>
-      </div>
-
-      <!-- 视频 2 -->
-      <div class="video-card">
-        <div class="video-top">
-          <h4 class="video-title">Making the City Flutter - Behind the Scenes</h4>
-          <span class="video-duration">0:32</span>
-        </div>
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/A6oOGAklxAo"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-        </div>
-        <p class="video-caption">Short video documentation of making process.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<section class="gallery">
-  <div class="section-inner">
-    <h3 class="section-title">Process of Making</h3>
-    <p class="section-sub"> </p>
-
-    <style>
-      .alt-layout {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        padding: 40px 0;
-        align-items: center;
-      }
-      .alt-layout img {
-        width: 100%;
-        height: auto;
-        border-radius: 12px;
-        background: #ccc;
-      }
-      .alt-layout .text {
-        font-size: 1rem;
-        color: #444;
-      }
-      .alt-layout .text strong {
-        font-size: 1.2rem;
-        display: block;
-        margin-bottom: 6px;
-        color: var(--text);
-      }
-    </style>
-
-    <!-- Row 1: 图片左 / 文案右 -->
-    <div class="alt-layout">
-      <img src="assets/images/work1.jpg" alt="作品 1">
-      <div class="text">
-        <strong>Collecting Materials</strong>
-        We conducted on-site filming across Hong Kong and searched for usable footage.
-      </div>
-    </div>
-
-    <!-- Row 2: 文案左 / 图片右 -->
-    <div class="alt-layout">
-      <div class="text">
-        <strong>Coding to Edit Materials</strong>
-        We wrote code to edit and compile the collected footage into a cohesive visual narrative.
-      </div>
-      <pre id="code-block"></pre>
-
-<script>
-  fetch("ScanimationGenerator.jsx")
-    .then(response => response.text())
-    .then(text => {
-      document.getElementById("code-block").textContent = text;
-    });
-</script>
-    </div>
-
-    <!-- Row 3 -->
-    <div class="alt-layout">
-      <img src="assets/images/work3.jpg" alt="作品 3">
-      <div class="text">
-        <strong>Testing and Refinement</strong>
-        Testing different configurations and refining the visual effects to achieve the desired outcome.
-      </div>
-    </div>
-
-    <!-- Row 4 -->
-    <div class="alt-layout">
-      <div class="text">
-        <strong>Video and Music Editing</strong>
-        Finalizing the video with editing software CapCut and adding a fitting soundtrack to enhance the experience.
-      </div>
-      <img src="assets/images/work4.jpg" alt="作品 4">
-    </div>
-
-  </div>
-</section>
-
-
-<section class="more-text">
-  <div class="section-inner">
-    <div class="text-block">
-      <h4 class="text-title">Final Report</h4>
-      <p>By capturing the city’s horizontal and vertical structures and recomposing them into layered visual collages, the project carries the distinctive color palette, texture, and tempo of each district. These structured yet fluid patterns evoke the city’s architectural rhythm and the aesthetic clarity of its lines.
-
-The final output reimagines barrier grid animation not merely as a visual illusion, but as a poetic lens through which Hong Kong’s layered identity is revealed — from its flickering core to its breathing periphery.</p>
-    </div>
-  </div>
-</section>
-
-<section class="credits">
-  <div class="section-inner">
-    <h3 class="section-title">Authors</h3>
-    <p class="section-sub small"> </p>
-
-    <style>
-      .authors {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 36px;
-        margin-top: 24px;
-      }
-      .author-card {
-        background: #fff;
-        border-radius: 14px;
-        box-shadow: var(--shadow-soft);
-        padding: 22px;
-        text-align: center;
-      }
-      .author-card img {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        object-fit: cover;
-        background: #ddd;
-        margin-bottom: 16px;
-      }
-      .author-card p {
-        margin: 4px 0 14px;
-      }
-      .author-card a.button {
-        display: inline-block;
-        padding: 10px 18px;
-        background: var(--accent);
-        color: #fff;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 0.95rem;
-      }
-    </style>
-
-    <div class="authors">
-      <!-- Author 1 -->
-      <div class="author-card">
-        <img src="assets/images/author1.jpg" alt="作者 1头像">
-        <h4>HUANG Yifei Peter</h4>
-        <p>Year 3 Student of School of Creative Media, City University of Hong Kong.</p>
-        <a class="button" href="https://yatging.github.io/Yifei-Personal-Website/" target="_blank">View Personal Website</a>
-      </div>
-
-      <!-- Author 2 -->
-      <div class="author-card">
-        <img src="assets/images/author2.jpg" alt="作者 2头像">
-        <h4>SUN Jiayi Anny</h4>
-        <p>Year 4 Student of School of Creative Media, City University of Hong Kong.</p>
-        <a class="button" href="https://example.com" target="_blank">View Personal Website</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p>&copy; 2025 City Flutter. All rights reserved.</p>
-  </div>
-</footer>
-
-</div>
 
 </body>
 </html>
