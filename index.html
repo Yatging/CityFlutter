@@ -241,7 +241,7 @@
         </div>
         <div class="video-frame">
           <iframe
-            src="https://www.youtube.com/embed/_tIOIFBpNwA"
+            src="https://youtu.be/_TTr9y5cekk"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -349,6 +349,160 @@
         Finalizing the video with editing software CapCut and adding a fitting soundtrack to enhance the experience.
       </div>
       <img src="assets/images/work4.jpg" alt="作品 4">
+    </div>
+
+  </div>
+</section>
+
+<section class="comparison">
+  <div class="section-inner">
+    <h3 class="section-title">Animation Production Effect Showcase</h3>
+    <p class="section-sub">We convert dynamic video into static animated base layers for barrier grid animation.</p>
+
+    <style>
+      .comparison-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        align-items: center;
+        margin-bottom: 48px;
+      }
+
+      .comparison-media {
+        position: relative;
+        background: #eee;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .comparison-media img {
+        width: 100%;
+        height: auto;
+        display: block;
+        background: #ccc;
+      }
+
+      /* 左上角角标通用样式 */
+      .comparison-media::before {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        padding: 4px 10px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border-radius: 999px;
+        z-index: 2;
+        backdrop-filter: blur(6px);
+      }
+
+      /* BEFORE 标签 */
+      .comparison-media.before::before {
+        content: "BEFORE";
+        background: rgba(0, 0, 0, 0.55);
+        color: #fff;
+      }
+
+      /* AFTER 标签 */
+      .comparison-media.after::before {
+        content: "AFTER";
+        background: rgba(255, 255, 255, 0.75);
+        color: #111;
+      }
+
+      .comparison-caption {
+        grid-column: 1 / -1;
+        margin-top: 14px;
+        font-size: 0.95rem;
+        color: var(--muted);
+        max-width: 70ch;
+      }
+
+      /* 响应式：小屏改为上下排列 */
+      @media (max-width: 900px) {
+        .comparison-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <!-- Row 1 -->
+    <div class="comparison-row">
+      <div class="comparison-media before">
+        <img src="assets/images/before_1.gif" alt="处理前 场景 1">
+      </div>
+      <div class="comparison-media after">
+        <img src="assets/images/after_1.png" alt="处理后 场景 1">
+      </div>
+      <div class="comparison-caption">
+        The Clock
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="comparison-row">
+      <div class="comparison-media before">
+        <img src="assets/images/before_2.gif" alt="处理前 场景 2">
+      </div>
+      <div class="comparison-media after">
+        <img src="assets/images/after_2.png" alt="处理后 场景 2">
+      </div>
+      <div class="comparison-caption">
+        The Skywalk
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="comparison-row">
+      <div class="comparison-media before">
+        <img src="assets/images/before_3.gif" alt="处理前 场景 3">
+      </div>
+      <div class="comparison-media after">
+        <img src="assets/images/after_3.png" alt="处理后 场景 3">
+      </div>
+      <div class="comparison-caption">
+        A MTR Train of Kwun Tong Line
+      </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="comparison-row">
+      <div class="comparison-media before">
+        <img src="assets/images/before_4.gif" alt="处理前 场景 4">
+      </div>
+      <div class="comparison-media after">
+        <img src="assets/images/after_4.png" alt="处理后 场景 4">
+      </div>
+      <div class="comparison-caption">
+        场景说明占位：海浪运动被转译为横向延展的动态纹理。
+      </div>
+    </div>
+
+    <!-- Row 5 -->
+    <div class="comparison-row">
+      <div class="comparison-media before">
+        <img src="assets/images/before_5.gif" alt="处理前 场景 5">
+      </div>
+      <div class="comparison-media after">
+        <img src="assets/images/after_5.png" alt="处理后 场景 5">
+      </div>
+      <div class="comparison-caption">
+        场景说明占位：人群密度变化在算法处理中被强化为视觉对比。
+      </div>
+    </div>
+
+    <!-- Row 6 -->
+    <div class="comparison-row">
+      <div class="comparison-media before">
+        <img src="assets/images/before_6.gif" alt="处理前 场景 6">
+      </div>
+      <div class="comparison-media after">
+        <img src="assets/images/after_6.png" alt="处理后 场景 6">
+      </div>
+      <div class="comparison-caption">
+        场景说明占位：时间维度被压缩为静态图像中的节奏痕迹。
+      </div>
     </div>
 
   </div>
@@ -478,7 +632,7 @@
     <div class="mentor-card">
       <img src="assets/images/mentor.jpg" alt="Professor Miu Ling LAM">
       <h4>Dr LAM, Miu Ling</h4>
-      <p>Dr Miu Ling Lam , the Associate Professor of School of Creative Media, City University of Hong Kong, is the instructor and mentor for this project, providing invaluable guidance and support.</p>
+      <p>Dr Miu Ling Lam ,the Associate Professor of School of Creative Media, City University of Hong Kong, is the instructor and mentor for SM3805 course and this project, providing invaluable guidance and support.</p>
       <a class="button" href="https://www.scm.cityu.edu.hk/people/lam-miu-ling" target="_blank">View Profile</a>
     </div>
 

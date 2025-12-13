@@ -256,3 +256,34 @@ a:focus, button:focus, video:focus{
   outline-offset:4px;
   border-radius:8px;
 }
+.comparison-media {
+  position: relative;
+}
+
+/* 通用角标样式 */
+.comparison-media::before {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 999px;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+}
+
+/* BEFORE */
+.comparison-media.before::before {
+  content: "BEFORE";
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+}
+
+/* AFTER */
+.comparison-media.after::before {
+  content: "AFTER";
+  background: rgba(255, 255, 255, 0.75);
+  color: #111;
+}
